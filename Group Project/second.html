@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="payment">
+
+<head>
+    <title>Sanora Education Center</title>
+    <link rel="stylesheet" href="Style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="payment.js"></script>
+</head>
+
+<body>
+    <center>
+        <div class="container11">
+            <div class="container12">
+                <h1>Sanora Education Center</h1>
+                <p><b>Rs. 1200.00</b></br></br>
+            </div>
+
+            <h2>Select payment Method<h2>
+                    <br>
+                    <a href="#!paypal"><img src="paypal.jpg" width="80" height="50"></a>
+                    <a href="#!master"><img src="Mcard.jpg" width="80" height="50"></a>
+                    <a href="#!visa"><img src="visa.png" width="80" height="50"></a>
+
+                    <div ng-view></div>
+
+        </div>
+    </center>
+</body>
+
+</html>
