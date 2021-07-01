@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>PHP dara Type</title>
+</head>
+<body>
+<?php
+$conn = mysqli_connect('local host','root','','mydb');
+if ($conn)
+{
+    die("Sorry we failed to connect: ".mysqli_connect_error());
+}
+else
+{
+    echo "Connection was Successful<br>";
+}
+$sql = 'SELECT * FROM student';
+$retval = mysqli_query($conn,$sql);
+
+if(!$retval)
+{
+    die("Could not get Data ".mysqli_connect_error());
+}
+$username = $_REQUEST['username'];
+$password = $_REQUEST['password'];
+
+while($row = mysqli_fetch_array($retval, MYSQLI_ASSOC))
+{
+    if($username=={$row['username']})
+    {
+        if($password=={$row['password']})
+        {
+            echo "Access Allowed";
+        }
+        else
+        {
+            echo "Incorrect Password.Try again";
+        }
+    }
+    else
+    {
+        echo "Incorrect Username. Try again";
+    }
+}
+?>
+
+</body>
+</html>
